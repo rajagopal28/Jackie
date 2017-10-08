@@ -46,7 +46,7 @@ class UserHomeScreen extends Component {
          <Button
            title="Log Vitals"
            onPress={() =>
-             navigate('UserLogin', state.params)
+             navigate('VitalsUpdate', state.params)
            }
          />
          <Button

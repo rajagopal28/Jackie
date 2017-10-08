@@ -32,7 +32,7 @@ class VitalsUpdateScreen extends Component {
     UserService.logUserVitals(log, (vitalLog) => {
       console.log('logged vitals...');
       console.log(JSON.stringify(vitalLog));
-      ToastAndroid.show('Vital information has been logged !', ToastAndroid.SHORT);
+      ToastAndroid.show('Vital information has been logged!', ToastAndroid.SHORT);
       navigate('UserHome', state.params)
     });
   }

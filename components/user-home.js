@@ -40,7 +40,7 @@ class UserHomeScreen extends Component {
          <Button
            title="View Vitals"
            onPress={() =>
-             navigate('UserLogin', state.params)
+             navigate('VitalLogs', state.params)
            }
          />
          <Button

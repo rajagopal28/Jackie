@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Platform,
-  StyleSheet,
   Text,
   View,
   Button
 } from 'react-native';
+
+import HomeStyles from '../styles/app-styles';
+
+const styles = HomeStyles;
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -17,8 +21,29 @@ class HomeScreen extends Component {
    static navigationOptions = {
      title: 'Welcome',
    };
+   constructor() {
+     super();
+     this.state = {loggedInUser: null};
+   }
+   async loadFromSettings() {
+     const { navigate } = this.props.navigation;
+     const loggedInUserStr = await AsyncStorage.getItem('LoggedInUser');
+     if (loggedInUserStr) {
+       // redirect to doctor_appointments
+      console.log(loggedInUserStr);
+      let loggedInUser = JSON.parse(loggedInUserStr);
+      if(loggedInUser && loggedInUser.user) {
+        navigate('UserHome', {'userId': loggedInUser.user.id});
+        this.setState({loggedInUser});
+      }
+     }
+   }
+   componentDidMount() {
+     this.loadFromSettings();
+   }
    render() {
      const { navigate } = this.props.navigation;
+     const {state} = this.props.navigation;
      return (
        <View style={styles.container}>
          <Text style={styles.welcome}>
@@ -40,31 +65,12 @@ class HomeScreen extends Component {
          <Button
            title="DoctorAppointmets"
            onPress={() =>
-             navigate('DoctorAppointmets')
+             navigate('DoctorAppointmets', {'userId': this.state.loggedInUser.user.id})
            }
          />
        </View>
      );
    }
  }
-
- const styles = StyleSheet.create({
-   container: {
-     flex: 1,
-     justifyContent: 'center',
-     alignItems: 'center',
-     backgroundColor: '#F5FCFF',
-   },
-   welcome: {
-     fontSize: 20,
-     textAlign: 'center',
-     margin: 10,
-   },
-   instructions: {
-     textAlign: 'center',
-     color: '#333333',
-     marginBottom: 5,
-   },
- });
 
  export default HomeScreen;

@@ -31,6 +31,12 @@ class UserService extends BaseService {
         console.log('Out Patients Loaded!!');
       });
   }
+  static getVitalLogs(params, cb) {
+    super.getData('user_vital_logs.json', params, cb,
+      () =>{
+        console.log('Vital Logs Loaded!!');
+      });
+  }
 }
 
 export default UserService;

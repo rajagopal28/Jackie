@@ -37,6 +37,12 @@ class HomeScreen extends Component {
              navigate('UserLogin')
            }
          />
+         <Button
+           title="DoctorAppointmets"
+           onPress={() =>
+             navigate('DoctorAppointmets')
+           }
+         />
        </View>
      );
    }

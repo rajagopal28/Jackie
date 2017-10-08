@@ -15,7 +15,7 @@ import VitalLogItemRow from './rows/vital-log-item';
 const styles = ListViewStyles;
 class VitalLogScreen extends Component {
   static navigationOptions = {
-    title: 'Out Patients',
+    title: 'User Vitals',
   };
   constructor() {
     super();

@@ -52,7 +52,7 @@ class UserHomeScreen extends Component {
          <Button
            title="Today's Medicines"
            onPress={() =>
-             navigate('UserLogin', state.params)
+             navigate('PrescribedMedicines', state.params)
            }
          />
          <Button

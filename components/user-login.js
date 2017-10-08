@@ -14,25 +14,37 @@ class UserLoginScreen extends Component {
   static navigationOptions = {
     title: 'User Login',
   };
-  buttonClicked(event) {
+  login(event) {
     console.log('Console log for click!');
-    console.log(this.state);
+    console.log(JSON.stringify(this.state));
   }
   constructor(props) {
     super(props);
-    this.state = { text: 'Useless Placeholder' };
+    this.state = { username: '', password: '' };
+    this.buttonClicked= this.login.bind(this);
   }
   render() {
     return (
-      <View>
+      <View style={styles.container}>
+        <Text>
+          Username
+        </Text>
         <TextInput
           style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={(text) => this.setState({text})}
-          value={this.state.text}
+          onChangeText={(username) => this.setState({username})}
+          value={this.state.username}
+        />
+        <Text>
+          Password
+        </Text>
+        <TextInput
+          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          onChangeText={(password) => this.setState({password})}
+          value={this.state.password}
+          secureTextEntry={true}
         />
         <Button
           title="Login!"
-          color="#841584"
           onPress={this.buttonClicked}
           accessibilityLabel="Learn more about this purple button">
           Press Me!
@@ -41,5 +53,10 @@ class UserLoginScreen extends Component {
     );
   }
 }
-
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    backgroundColor: '#F5FCFF',
+  }
+});
 export default UserLoginScreen;

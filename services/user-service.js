@@ -13,6 +13,12 @@ class UserService extends BaseService {
         console.log('User Logged in!!');
       });
   }
+  static logUserVitals(params, cb) {
+    super.postData('user_vital_logs.json', {user_vital_log: params}, cb,
+      () =>{
+        console.log('User Vitals Added!');
+      });
+  }
   static getDoctorAppointments(params, cb) {
     super.getData('doctor_appointments.json', params, cb,
       () =>{

@@ -9,8 +9,11 @@ import {
   ListView
 } from 'react-native';
 
+import ListViewStyles from '../styles/list-view-styles';
 import UserService from '../services/user-service';
 import DoctorAppointmentRow from './rows/doctor-appointment-item';
+
+const styles = ListViewStyles;
 
 class DoctorAppointmetScreen extends Component {
   static navigationOptions = {
@@ -24,11 +27,13 @@ class DoctorAppointmetScreen extends Component {
     };
   }
   componentDidMount(){
-      this.loadJSONData();
+    const {state} = this.props.navigation;
+    console.log("Loading Appointments with... " + JSON.stringify(state.params));
+    this.loadJSONData(state.params);
   }
-  loadJSONData() {
+  loadJSONData(params) {
     _this = this;
-    UserService.getDoctorAppointments((dps) => {
+    UserService.getDoctorAppointments(params, (dps) => {
       _this.setState({ dataSource: this.state.dataSource.cloneWithRows(dps)});
     });
   }
@@ -42,10 +47,4 @@ class DoctorAppointmetScreen extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-   list: {
-          justifyContent: 'space-around',
-          flexWrap: 'wrap'
-      }
-});
 export default DoctorAppointmetScreen;

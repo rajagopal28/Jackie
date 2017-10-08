@@ -1,20 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    borderColor: 'gray',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    borderWidth: 1
-  },
-  text: {
-    marginLeft: 12,
-    fontSize: 16,
-  }
-});
+import ListViewStyles from '../../styles/list-view-styles';
+
+const styles = ListViewStyles;
 
 const DoctorAppointmentRow = (props) => (
   <View style={styles.container}>

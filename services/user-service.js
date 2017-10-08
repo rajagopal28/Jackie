@@ -7,10 +7,22 @@ class UserService extends BaseService {
         console.log('Users Loaded!!');
       });
   }
-  static getDoctorAppointments(cb) {
-    super.getData('doctor_appointments.json', {}, cb,
+  static login(params, cb) {
+    super.postData('users/signin.json', {user: params}, cb,
+      () =>{
+        console.log('User Logged in!!');
+      });
+  }
+  static getDoctorAppointments(params, cb) {
+    super.getData('doctor_appointments.json', params, cb,
       () =>{
         console.log('Doctor Appointments Loaded!!');
+      });
+  }
+  static getOutPatients(params, cb) {
+    super.getData('in_patients.json', params, cb,
+      () =>{
+        console.log('Out Patients Loaded!!');
       });
   }
 }

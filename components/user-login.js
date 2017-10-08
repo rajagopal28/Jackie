@@ -28,7 +28,7 @@ class UserLoginScreen extends Component {
       if(user.id) {
         AsyncStorage.setItem('LoggedInUser', JSON.stringify({user: user}));
         const { navigate } = this.props.navigation;
-        navigate('UserHome');
+        navigate('UserHome', {userId: user.id});
       }
     });
   }

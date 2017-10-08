@@ -37,6 +37,12 @@ class UserService extends BaseService {
         console.log('Vital Logs Loaded!!');
       });
   }
+  static getPrescribedMedicines(params, cb) {
+    super.getData('prescribed_medicines.json', params, cb,
+      () =>{
+        console.log('Prescribed Medicines Loaded!!');
+      });
+  }
 }
 
 export default UserService;

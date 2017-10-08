@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import {
+  AsyncStorage,
   Platform,
   StyleSheet,
   Text,
@@ -9,6 +10,10 @@ import {
   TextInput
 } from 'react-native';
 
+import UserService from '../services/user-service';
+import HomeStyles from '../styles/app-styles';
+
+const styles = HomeStyles;
 
 class UserLoginScreen extends Component {
   static navigationOptions = {
@@ -17,6 +22,15 @@ class UserLoginScreen extends Component {
   login(event) {
     console.log('Console log for click!');
     console.log(JSON.stringify(this.state));
+    UserService.login(this.state, (user) => {
+      console.log('logged in...');
+      console.log(JSON.stringify(user));
+      if(user.id) {
+        AsyncStorage.setItem('LoggedInUser', JSON.stringify({user: user}));
+        const { navigate } = this.props.navigation;
+        navigate('UserHome');
+      }
+    });
   }
   constructor(props) {
     super(props);
@@ -25,12 +39,12 @@ class UserLoginScreen extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.form_container}>
         <Text>
           Username
         </Text>
         <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          style={styles.form_input}
           onChangeText={(username) => this.setState({username})}
           value={this.state.username}
         />
@@ -38,7 +52,7 @@ class UserLoginScreen extends Component {
           Password
         </Text>
         <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+          style={styles.form_input}
           onChangeText={(password) => this.setState({password})}
           value={this.state.password}
           secureTextEntry={true}
@@ -53,10 +67,4 @@ class UserLoginScreen extends Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
 export default UserLoginScreen;

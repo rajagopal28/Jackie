@@ -47,7 +47,7 @@ class MedicineIntakeScreen extends Component {
   }
   loadJSONData(params) {
     _this = this;
-    UserService.getPrescribedMedicines(params, (dps) => {
+    UserService.getFilteredPrescribedMedicines(params, (dps) => {
       _this.setState({ dataSource: this.state.dataSource.cloneWithRows(dps)});
     });
   }

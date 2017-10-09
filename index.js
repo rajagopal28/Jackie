@@ -12,6 +12,7 @@ import  OutPatientScreen from './components/out-patients';
 import  VitalsUpdateScreen from './components/vital-update';
 import  VitalLogScreen from './components/vital-logs';
 import  PrescribedMedicinesScreen from './components/prescribed-medicines';
+import  MedicineIntakeScreen from './components/medicine-intake';
 
  const App = StackNavigator({
    Home: {screen : HomeScreen},
@@ -21,7 +22,8 @@ import  PrescribedMedicinesScreen from './components/prescribed-medicines';
    DoctorAppointmets: { screen: DoctorAppointmetScreen },
    VitalsUpdate: { screen: VitalsUpdateScreen },
    VitalLogs: { screen: VitalLogScreen },
-   PrescribedMedicines: { screen: PrescribedMedicinesScreen }
+   PrescribedMedicines: { screen: PrescribedMedicinesScreen },
+   MedicineIntake: { screen: MedicineIntakeScreen }
  });
 
 AppRegistry.registerComponent('Jackie', () => App);

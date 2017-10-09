@@ -58,7 +58,7 @@ class UserHomeScreen extends Component {
          <Button
            title="Update Medicine Intake"
            onPress={() =>
-             navigate('DoctorAppointmets', state.params)
+             navigate('MedicineIntake', state.params)
            }
          />
        </View>

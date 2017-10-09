@@ -33,7 +33,7 @@ class HomeScreen extends Component {
       console.log(loggedInUserStr);
       let loggedInUser = JSON.parse(loggedInUserStr);
       if(loggedInUser && loggedInUser.user) {
-        navigate('UserHome', {'userId': loggedInUser.user.id});
+        navigate('UserHome', {userId: loggedInUser.user.id});
         this.setState({loggedInUser});
       }
      }
@@ -65,7 +65,7 @@ class HomeScreen extends Component {
          <Button
            title="DoctorAppointmets"
            onPress={() =>
-             navigate('DoctorAppointmets', {'userId': this.state.loggedInUser.user.id})
+             navigate('DoctorAppointmets', {userId: this.state.loggedInUser.user.id})
            }
          />
        </View>

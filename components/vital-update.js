@@ -13,6 +13,7 @@ import {
 
 import UserService from '../services/user-service';
 import HomeStyles from '../styles/app-styles';
+import AppUtils from '../utils/app-utils';
 
 const styles = HomeStyles;
 
@@ -27,7 +28,7 @@ class VitalsUpdateScreen extends Component {
       const { navigate } = this.props.navigation;
     let log = this.state;
     log.user_id = state.params.userId;
-    log.logged_on = this.getFormattedDateString();
+    log.logged_on = AppUtils.getFormattedDateString();
     console.log(log.logged_on);
     UserService.logUserVitals(log, (vitalLog) => {
       console.log('logged vitals...');
@@ -35,15 +36,6 @@ class VitalsUpdateScreen extends Component {
       ToastAndroid.show('Vital information has been logged!', ToastAndroid.SHORT);
       navigate('UserHome', state.params)
     });
-  }
-  getFormattedDateString(date) {
-    let d = date ? date : new Date();
-    return d.getFullYear()
-      + '-' + (d.getMonth()> 9 ? d.getMonth() : '0'+d.getMonth())
-      + '-' + (d.getDate() > 9 ? d.getDate() : '0'+d.getDate())
-      + ' ' + (d.getHours() > 9 ? d.getHours() : '0'+d.getHours())
-      + ':' + (d.getMinutes() > 9 ? d.getMinutes() : '0'+d.getMinutes())
-      + ':' + (d.getSeconds() > 9 ? d.getSeconds() : '0'+d.getSeconds());
   }
   constructor(props) {
     super(props);

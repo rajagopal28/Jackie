@@ -23,7 +23,6 @@ class HomeScreen extends Component {
    };
    constructor() {
      super();
-     this.state = {loggedInUser: null};
    }
    async loadFromSettings() {
      const { navigate } = this.props.navigation;
@@ -34,7 +33,9 @@ class HomeScreen extends Component {
       let loggedInUser = JSON.parse(loggedInUserStr);
       if(loggedInUser && loggedInUser.user) {
         navigate('UserHome', {userId: loggedInUser.user.id});
-        this.setState({loggedInUser});
+      }
+      if(loggedInUser && loggedInUser.doctor) {
+        navigate('DoctorHome', {userId: loggedInUser.doctor.id});
       }
      }
    }
@@ -44,6 +45,7 @@ class HomeScreen extends Component {
    render() {
      const { navigate } = this.props.navigation;
      const {state} = this.props.navigation;
+     // , {userId: this.state.loggedInUser.user.id}
      return (
        <View style={styles.container}>
          <Text style={styles.welcome}>
@@ -63,9 +65,9 @@ class HomeScreen extends Component {
            }
          />
          <Button
-           title="DoctorAppointmets"
+           title="DoctorLogin"
            onPress={() =>
-             navigate('DoctorAppointmets', {userId: this.state.loggedInUser.user.id})
+             navigate('DoctorLogin')
            }
          />
        </View>

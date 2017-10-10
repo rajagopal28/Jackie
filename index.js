@@ -6,13 +6,15 @@ import {
 
 import UserLoginScreen from './components/user-login';
 import UserHomeScreen from './components/user-home';
-import  HomeScreen from './components/home';
-import  DoctorAppointmetScreen from './components/doctor-appointments';
-import  OutPatientScreen from './components/out-patients';
-import  VitalsUpdateScreen from './components/vital-update';
-import  VitalLogScreen from './components/vital-logs';
-import  PrescribedMedicinesScreen from './components/prescribed-medicines';
-import  MedicineIntakeScreen from './components/medicine-intake';
+import HomeScreen from './components/home';
+import DoctorAppointmetScreen from './components/doctor-appointments';
+import OutPatientScreen from './components/out-patients';
+import VitalsUpdateScreen from './components/vital-update';
+import VitalLogScreen from './components/vital-logs';
+import PrescribedMedicinesScreen from './components/prescribed-medicines';
+import MedicineIntakeScreen from './components/medicine-intake';
+import DoctorLoginScreen from './components/doctor-login';
+import DoctorHomeScreen from './components/doctor-home';
 // var PushNotification = require('react-native-push-notification');
 import PushNotification from 'react-native-push-notification';
 
@@ -59,7 +61,9 @@ PushNotification.configure({
    VitalsUpdate: { screen: VitalsUpdateScreen },
    VitalLogs: { screen: VitalLogScreen },
    PrescribedMedicines: { screen: PrescribedMedicinesScreen },
-   MedicineIntake: { screen: MedicineIntakeScreen }
+   MedicineIntake: { screen: MedicineIntakeScreen },
+   DoctorLogin: { screen: DoctorLoginScreen },
+   DoctorHome: {screen : DoctorHomeScreen}
  });
 
 AppRegistry.registerComponent('Jackie', () => App);

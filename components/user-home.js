@@ -49,6 +49,12 @@ class UserHomeScreen extends Component {
            }
          />
          <Button
+           title="DoctorAppointmets"
+           onPress={() =>
+             navigate('DoctorAppointmets', state.params)
+           }
+         />
+         <Button
            title="View Vitals"
            onPress={() =>
              navigate('VitalLogs', state.params)

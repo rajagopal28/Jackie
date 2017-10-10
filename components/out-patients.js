@@ -35,12 +35,18 @@ class OutPatientScreen extends Component {
       _this.setState({ dataSource: this.state.dataSource.cloneWithRows(dps)});
     });
   }
+  navigateToUserActions() {
+    const { navigate, state } = this.props.navigation;
+    if(state.params.doctorId) {
+      navigate('UserHome', state.params);
+    }
+  }
   render() {
     return (
       <ListView
         contentContainerStyle={styles.list}
         dataSource={this.state.dataSource}
-        renderRow={(da) => <OutPatientRow {...da} />}
+        renderRow={(da) => <OutPatientRow {...da} navigateToUserActions={this.navigateToUserActions.bind(this)} />}
       />
     );
   }

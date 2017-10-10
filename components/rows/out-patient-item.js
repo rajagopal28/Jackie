@@ -11,14 +11,15 @@ class OutPatientRow extends Component {
     }
 
     goToUserHome() {
-        this.props.navigateToUserActions(this.props);
+      console.log('touched item...');
+      this.props.navigateToUserActions(this.props);
     }
 
     render() {
       let props = this.props;
         return (
           <View style={styles.container}>
-            <TouchableOpacity  onPress={()=>this.goToUserHome(rowData)}>
+            <TouchableOpacity  onPress={this.goToUserHome.bind(this)}>
               <Text style={styles.text}>
                 {`Patient: ${props.user.first_name} ${props.user.last_name}`}
               </Text>

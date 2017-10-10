@@ -35,10 +35,13 @@ class OutPatientScreen extends Component {
       _this.setState({ dataSource: this.state.dataSource.cloneWithRows(dps)});
     });
   }
-  navigateToUserActions() {
+  navigateToUserHome(clickedItem) {
     const { navigate, state } = this.props.navigation;
-    if(state.params.doctorId) {
-      navigate('UserHome', state.params);
+    console.log('in navigateToUserHome', JSON.stringify(state.params));
+    if(state.params.doctorId && !state.params.userId) {
+      var params = state.params;
+      params.userId = clickedItem.user.id;
+      navigate('UserHome', params);
     }
   }
   render() {
@@ -46,7 +49,7 @@ class OutPatientScreen extends Component {
       <ListView
         contentContainerStyle={styles.list}
         dataSource={this.state.dataSource}
-        renderRow={(da) => <OutPatientRow {...da} navigateToUserActions={this.navigateToUserActions.bind(this)} />}
+        renderRow={(da) => <OutPatientRow {...da} navigateToUserActions={this.navigateToUserHome.bind(this)} />}
       />
     );
   }

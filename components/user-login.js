@@ -7,7 +7,8 @@ import {
   Text,
   View,
   Button,
-  TextInput
+  TextInput,
+  ToastAndroid
 } from 'react-native';
 
 import UserService from '../services/user-service';
@@ -28,6 +29,7 @@ class UserLoginScreen extends Component {
       if(user.id) {
         AsyncStorage.setItem('LoggedInUser', JSON.stringify({user: user}));
         const { navigate } = this.props.navigation;
+        ToastAndroid.show('Log in success!', ToastAndroid.SHORT);
         navigate('UserHome', {userId: user.id});
       }
     });

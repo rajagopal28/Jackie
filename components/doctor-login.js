@@ -23,7 +23,19 @@ class DoctorLoginScreen extends Component {
   login(event) {
     console.log('Console log for click!');
     console.log(JSON.stringify(this.state));
-    DoctorService.login(this.state, (doctor) => {
+    let _this = this;
+    AsyncStorage.getItem('DeviceGCMID').then((gcmid) => {
+      var params = this.state;
+      params.gcmid = gcmid;
+      _this.loginDoctor(params);
+    }).catch((error)=> {
+      console.log('gcm id not found... still loggin in doctor ...');
+      ToastAndroid.show('GCMID not found..', ToastAndroid.SHORT);
+      _this.loginDoctor(this.state);
+    });
+  }
+  loginDoctor(params) {
+    DoctorService.login(params, (doctor) => {
       console.log('logged in...');
       console.log(JSON.stringify(doctor));
       if(doctor.id) {

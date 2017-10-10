@@ -23,7 +23,19 @@ class UserLoginScreen extends Component {
   login(event) {
     console.log('Console log for click!');
     console.log(JSON.stringify(this.state));
-    UserService.login(this.state, (user) => {
+    let _this = this;
+    AsyncStorage.getItem('DeviceGCMID').then((gcmid) => {
+      var params = this.state;
+      params.gcmid = gcmid;
+      _this.loginUser(params);
+    }).catch((error)=> {
+      console.log('gcm id not found... still loggin in user ...');
+      ToastAndroid.show('GCMID not found..', ToastAndroid.SHORT);   
+      _this.loginUser(this.state);
+    });
+  }
+  loginUser(params) {
+    UserService.login(params, (user) => {
       console.log('logged in...');
       console.log(JSON.stringify(user));
       if(user.id) {

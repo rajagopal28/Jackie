@@ -20,6 +20,7 @@ import PrescribedMedicinesScreen from './components/prescribed-medicines';
 import MedicineIntakeScreen from './components/medicine-intake';
 import DoctorLoginScreen from './components/doctor-login';
 import DoctorHomeScreen from './components/doctor-home';
+import DoctorNotificationScreen from './components/doctor-notifications';
 
 
 PushNotification.configure({
@@ -76,7 +77,8 @@ PushNotification.configure({
    PrescribedMedicines: { screen: PrescribedMedicinesScreen },
    MedicineIntake: { screen: MedicineIntakeScreen },
    DoctorLogin: { screen: DoctorLoginScreen },
-   DoctorHome: {screen : DoctorHomeScreen}
+   DoctorHome: {screen : DoctorHomeScreen},
+   DoctorNotifications: {screen : DoctorNotificationScreen}
  });
 
 AppRegistry.registerComponent('Jackie', () => App);

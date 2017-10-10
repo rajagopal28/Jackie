@@ -17,7 +17,7 @@ const styles = ListViewStyles;
 
 class DoctorNotificationScreen extends Component {
   static navigationOptions = {
-    title: 'Doctor Appointments',
+    title: 'Doctor Notifications',
   };
   constructor() {
     super();

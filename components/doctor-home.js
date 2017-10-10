@@ -45,6 +45,12 @@ class DoctorHomeScreen extends Component {
            }
          />
          <Button
+           title="Your Notifications"
+           onPress={() =>
+             navigate('DoctorNotifications', state.params)
+           }
+         />
+         <Button
            title="Logout"
            onPress={this.logoutUser.bind(this)}
          />

@@ -27,20 +27,25 @@ PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
     onRegister: function(token) {
         console.log( 'TOKEN:', token );
-        AsyncStorage.setItem('DeviceGCMID', token);
-        ToastAndroid.show('onRegister, Loaded DeviceGCMID', ToastAndroid.SHORT);
+        if(token && token.token) {
+          // AsyncStorage.setItem('DeviceGCMID', token.token);
+        }
+        // ToastAndroid.show('onRegister, Loaded DeviceGCMID', ToastAndroid.SHORT);
     },
 
     // (required) Called when a remote or local notification is opened or received
     onNotification: function(notification) {
         console.log( 'NOTIFICATION:', notification );
-        if(notification.userInteraction) {
-          PushNotification.localNotification(notification);
+        if(notification['gcm.notification.title']) {
+          PushNotification.localNotification({
+            "title" : notification['gcm.notification.body'],
+            "message" : notification['gcm.notification.title']
+          });
         }
     },
 
     // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
-    senderID: "YOUR GCM SENDER ID",
+    senderID: "426278808874",
 
     // IOS ONLY (optional): default: all - Permissions to register.
     permissions: {

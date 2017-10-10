@@ -20,10 +20,21 @@ const styles = HomeStyles;
 
 class UserHomeScreen extends Component {
    static navigationOptions = {
-     title: 'Welcome',
+      title: 'Welcome',
+      header: {
+        left: null,
+      }
    };
    constructor() {
      super();
+   }
+   logoutUser() {
+       AsyncStorage.removeItem('LoggedInUser');
+       if (this.props.navigator && this.props.navigator.getCurrentRoutes() > 1) {
+        console.log("pop");
+        this.props.navigator.pop();
+    }
+       return false;
    }
    render() {
      const {state} = this.props.navigation;
@@ -60,6 +71,10 @@ class UserHomeScreen extends Component {
            onPress={() =>
              navigate('MedicineIntake', state.params)
            }
+         />
+         <Button
+           title="Logout"
+           onPress={this.logoutUser.bind(this)}
          />
        </View>
      );

@@ -7,6 +7,12 @@ class DocterService extends BaseService {
         console.log('Doctor Logged in!!');
       });
   }
+  static getDoctorNotifications(params, cb) {
+    super.getData('doctor_notifications.json', params, cb,
+      () =>{
+        console.log('Doctor Notifications Loaded!!');
+      });
+  }
 }
 
 export default DocterService;

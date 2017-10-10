@@ -35,7 +35,7 @@ class HomeScreen extends Component {
         navigate('UserHome', {userId: loggedInUser.user.id});
       }
       if(loggedInUser && loggedInUser.doctor) {
-        navigate('DoctorHome', {userId: loggedInUser.doctor.id});
+        navigate('DoctorHome', {doctorId: loggedInUser.doctor.id});
       }
      }
    }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {
   AsyncStorage,
+  ToastAndroid,
   Platform,
   StyleSheet,
   Text,
@@ -14,20 +15,15 @@ const styles = HomeStyles;
 
 class UserHomeScreen extends Component {
    static navigationOptions = {
-      title: 'Welcome',
-      header: {
-        left: null,
-      }
+      title: 'Welcome'
    };
    constructor() {
      super();
    }
    logoutUser() {
        AsyncStorage.removeItem('LoggedInUser');
-       if (this.props.navigator && this.props.navigator.getCurrentRoutes() > 1) {
-        console.log("pop");
-        this.props.navigator.pop();
-    }
+       ToastAndroid.show('Logged out user..', ToastAndroid.SHORT);
+       this.props.navigation.goBack(null);
        return false;
    }
    render() {

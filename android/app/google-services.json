@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "91777211713",
+    "firebase_url": "https://healthcaremobile-34a00.firebaseio.com",
+    "project_id": "healthcaremobile-34a00",
+    "storage_bucket": "healthcaremobile-34a00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91777211713:android:4f7f1d511278e550",
+        "android_client_info": {
+          "package_name": "com.jackie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91777211713-6smhpp6k6otff7bglriov6veb5q2dqm2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtJak92ZI-WhUb_uAz7toxFfkYHYPPy30"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

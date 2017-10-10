@@ -15,7 +15,7 @@ import DoctorAppointmentRow from './rows/doctor-appointment-item';
 
 const styles = ListViewStyles;
 
-class DoctorAppointmetScreen extends Component {
+class DoctorAppointmentScreen extends Component {
   static navigationOptions = {
     title: 'Doctor Appointments',
   };
@@ -47,4 +47,4 @@ class DoctorAppointmetScreen extends Component {
     );
   }
 }
-export default DoctorAppointmetScreen;
+export default DoctorAppointmentScreen;

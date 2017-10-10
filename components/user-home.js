@@ -43,9 +43,9 @@ class UserHomeScreen extends Component {
            }
          />
          <Button
-           title="DoctorAppointmets"
+           title="DoctorAppointments"
            onPress={() =>
-             navigate('DoctorAppointmets', state.params)
+             navigate('DoctorAppointments', state.params)
            }
          />
          <Button

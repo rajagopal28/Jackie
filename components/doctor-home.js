@@ -45,7 +45,7 @@ class DoctorHomeScreen extends Component {
          <Button
            title="Your Appointmets"
            onPress={() =>
-             navigate('DoctorAppointmets', state.params)
+             navigate('DoctorAppointments', state.params)
            }
          />
          <Button

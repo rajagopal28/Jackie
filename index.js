@@ -2,7 +2,12 @@ import { AppRegistry } from 'react-native';
 
 import {
   StackNavigator,
+  AsyncStorage,
+  ToastAndroid
 } from 'react-navigation';
+
+// var PushNotification = require('react-native-push-notification');
+import PushNotification from 'react-native-push-notification';
 
 import UserLoginScreen from './components/user-login';
 import UserHomeScreen from './components/user-home';
@@ -15,8 +20,6 @@ import PrescribedMedicinesScreen from './components/prescribed-medicines';
 import MedicineIntakeScreen from './components/medicine-intake';
 import DoctorLoginScreen from './components/doctor-login';
 import DoctorHomeScreen from './components/doctor-home';
-// var PushNotification = require('react-native-push-notification');
-import PushNotification from 'react-native-push-notification';
 
 
 PushNotification.configure({
@@ -24,11 +27,16 @@ PushNotification.configure({
     // (optional) Called when Token is generated (iOS and Android)
     onRegister: function(token) {
         console.log( 'TOKEN:', token );
+        AsyncStorage.setItem('DeviceGCMID', token);
+        ToastAndroid.show('onRegister, Loaded DeviceGCMID', ToastAndroid.SHORT);
     },
 
     // (required) Called when a remote or local notification is opened or received
     onNotification: function(notification) {
         console.log( 'NOTIFICATION:', notification );
+        if(notification.userInteraction) {
+          PushNotification.localNotification(notification);
+        }
     },
 
     // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)

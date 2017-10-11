@@ -6,7 +6,6 @@ const HomeStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
@@ -27,6 +26,9 @@ const HomeStyles = StyleSheet.create({
     height: 40,
     borderColor: 'gray',
     borderWidth: 1
-  }
+  },
+  formHeading : {fontSize: 20},
+  formPadding: {padding: 20},
+  buttonMargin: {padding: 20}
 });
 export default HomeStyles;

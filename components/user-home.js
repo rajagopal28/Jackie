@@ -32,47 +32,68 @@ class UserHomeScreen extends Component {
      const { navigate } = this.props.navigation;
      return (
        <View style={styles.container}>
-         <Button
-           title="View visiting Doctors"
-           onPress={() =>
-             navigate('OutPatients', state.params)
-           }
-         />
+        <View
+        style={styles.buttonMargin}>
+          <Button
+          title="View visiting Doctors"
+          onPress={() =>
+           navigate('OutPatients', state.params)
+          }
+          />
+        </View>
+        <View
+        style={styles.buttonMargin}>
          <Button
            title="DoctorAppointments"
            onPress={() =>
              navigate('DoctorAppointments', state.params)
            }
          />
+        </View>
+        <View
+        style={styles.buttonMargin}>
          <Button
            title="View Vitals"
            onPress={() =>
              navigate('VitalLogs', state.params)
            }
          />
+        </View>
+        <View
+        style={styles.buttonMargin}>
          <Button
            title="Log Vitals"
            onPress={() =>
              navigate('VitalsUpdate', state.params)
            }
          />
+        </View>
+        <View
+        style={styles.buttonMargin}>
          <Button
            title="Today's Medicines"
            onPress={() =>
              navigate('PrescribedMedicines', state.params)
            }
          />
+        </View>
+        <View
+        style={styles.buttonMargin}>
          <Button
            title="Update Medicine Intake"
            onPress={() =>
              navigate('MedicineIntake', state.params)
            }
          />
+        </View>
+        <View
+        style={styles.buttonMargin}>
          <Button
            title="Logout"
            onPress={this.logoutUser.bind(this)}
          />
-       </View>
+        </View>
+      </View>
      );
    }
  }

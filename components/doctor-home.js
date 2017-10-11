@@ -32,28 +32,40 @@ class DoctorHomeScreen extends Component {
      const { navigate } = this.props.navigation;
      return (
        <View style={styles.container}>
-         <Button
-           title="View visiting Patients"
-           onPress={() =>
-             navigate('OutPatients', state.params)
-           }
-         />
-         <Button
-           title="Your Appointmets"
-           onPress={() =>
-             navigate('DoctorAppointments', state.params)
-           }
-         />
-         <Button
-           title="Your Notifications"
-           onPress={() =>
-             navigate('DoctorNotifications', state.params)
-           }
-         />
-         <Button
-           title="Logout"
-           onPress={this.logoutUser.bind(this)}
-         />
+        <View
+        style={styles.buttonMargin}>
+           <Button
+             title="View visiting Patients"
+             onPress={() =>
+               navigate('OutPatients', state.params)
+             }
+           />
+          </View>
+          <View
+          style={styles.buttonMargin}>
+           <Button
+             title="Your Appointmets"
+             onPress={() =>
+               navigate('DoctorAppointments', state.params)
+             }
+           />
+          </View>
+          <View
+          style={styles.buttonMargin}>
+           <Button
+             title="Your Notifications"
+             onPress={() =>
+               navigate('DoctorNotifications', state.params)
+             }
+           />
+          </View>
+          <View
+          style={styles.buttonMargin}>
+           <Button
+             title="Logout"
+             onPress={this.logoutUser.bind(this)}
+           />
+          </View>
        </View>
      );
    }

@@ -6,7 +6,7 @@ import ListViewStyles from '../../styles/list-view-styles';
 const styles = ListViewStyles;
 
 const PrescribedMedicineItemRow = (props) => (
-  <View style={styles.container}>
+  <View style={styles.row}>
     <Text style={styles.text}>
       {`Medicine: ${props.medicine.name}`}
     </Text>

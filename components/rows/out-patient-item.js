@@ -18,7 +18,7 @@ class OutPatientRow extends Component {
     render() {
       let props = this.props;
         return (
-          <View style={styles.container}>
+          <View style={styles.row}>
             <TouchableOpacity  onPress={this.goToUserHome.bind(this)}>
               <Text style={styles.text}>
                 {`Patient: ${props.user.first_name} ${props.user.last_name}`}

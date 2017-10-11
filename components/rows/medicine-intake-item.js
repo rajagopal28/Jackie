@@ -22,7 +22,7 @@ class MedicineIntakeItemRow extends Component {
     render() {
       let props = this.props;
         return (
-          <View style={styles.container}>
+          <View style={styles.row}>
             <Text style={styles.text}>
               {`Medicine: ${props.medicine.name}`}
             </Text>

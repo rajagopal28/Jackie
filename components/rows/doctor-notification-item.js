@@ -6,7 +6,7 @@ import ListViewStyles from '../../styles/list-view-styles';
 const styles = ListViewStyles;
 
 const DoctorNotificationItemRow = (props) => (
-  <View style={styles.container}>
+  <View style={styles.row}>
     <Text style={styles.text}>
       {`User: ${props.user.first_name} ${props.user.last_name}`}
     </Text>

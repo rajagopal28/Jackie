@@ -5,7 +5,7 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View,
+  ScrollView,
   Button,
   TextInput,
   ToastAndroid
@@ -44,34 +44,41 @@ class VitalsUpdateScreen extends Component {
   }
   render() {
     return (
-      <View style={styles.form_container}>
-        <Text>Pressure</Text>
+      <ScrollView style={styles.formPadding}>
+        <Text style={styles.formHeading}>Vitals input</Text>
         <TextInput
-          style={styles.form_input}
+          placeholder='Pressure'
+          autoCapitalize='none'
+          autoCorrect={false}
+          autoFocus={true}
           onChangeText={(pressure) => this.setState({pressure})}
           value={this.state.pressure}
         />
-        <Text>Temperature</Text>
         <TextInput
-          style={styles.form_input}
+          placeholder='Temperature'
+          autoCapitalize='none'
+          autoCorrect={false}
           onChangeText={(temperature) => this.setState({temperature})}
           value={this.state.temperature}
         />
-        <Text>Sugar</Text>
         <TextInput
-          style={styles.form_input}
+          placeholder='Sugar'
+          autoCapitalize='none'
+          autoCorrect={false}
           onChangeText={(sugar) => this.setState({sugar})}
           value={this.state.sugar}
         />
-        <Text>Pulse</Text>
         <TextInput
-          style={styles.form_input}
+          placeholder='Pulse'
+          autoCapitalize='none'
+          autoCorrect={false}
           onChangeText={(pulse) => this.setState({pulse})}
           value={this.state.pulse}
         />
-        <Text>Notes</Text>
         <TextInput
-          style={styles.form_input}
+          placeholder='Notes(optional)'
+          autoCapitalize='none'
+          autoCorrect={false}
           onChangeText={(notes) => this.setState({notes})}
           value={this.state.notes}
         />
@@ -81,7 +88,7 @@ class VitalsUpdateScreen extends Component {
           accessibilityLabel="Learn more about this purple button">
           Press Me!
         </Button>
-      </View>
+      </ScrollView>
     );
   }
 }

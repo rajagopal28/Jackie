@@ -8,20 +8,12 @@ import {
   ScrollView,
   Button,
   TextInput,
-  View,
   ToastAndroid,
   TouchableOpacity
 } from 'react-native';
 
 import UserService from '../services/user-service';
 import HomeStyles from '../styles/app-styles';
-
-
-const background = require("../assets/images/app-background.png");
-const mark = require("../assets/images/tick.png");
-const lockIcon = require("../assets/images/lock.png");
-const personIcon = require("../assets/images/user.png");
-
 
 const styles = HomeStyles;
 
@@ -69,7 +61,6 @@ class UserLoginScreen extends Component {
             autoCapitalize='none'
             autoCorrect={false}
             autoFocus={true}
-            keyboardType='email-address'
             value={this.state.username}
             onChangeText={(username) => this.setState({username})} />
         <TextInput

@@ -5,14 +5,23 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View,
+  ScrollView,
   Button,
   TextInput,
-  ToastAndroid
+  View,
+  ToastAndroid,
+  TouchableOpacity
 } from 'react-native';
 
 import UserService from '../services/user-service';
 import HomeStyles from '../styles/app-styles';
+
+
+const background = require("../assets/images/app-background.png");
+const mark = require("../assets/images/tick.png");
+const lockIcon = require("../assets/images/lock.png");
+const personIcon = require("../assets/images/user.png");
+
 
 const styles = HomeStyles;
 
@@ -30,7 +39,7 @@ class UserLoginScreen extends Component {
       _this.loginUser(params);
     }).catch((error)=> {
       console.log('gcm id not found... still loggin in user ...');
-      ToastAndroid.show('GCMID not found..', ToastAndroid.SHORT);   
+      ToastAndroid.show('GCMID not found..', ToastAndroid.SHORT);
       _this.loginUser(this.state);
     });
   }
@@ -53,31 +62,29 @@ class UserLoginScreen extends Component {
   }
   render() {
     return (
-      <View style={styles.form_container}>
-        <Text>
-          Username
-        </Text>
+      <ScrollView style={styles.formPadding}>
+        <Text style={styles.formHeading}>Credentials</Text>
         <TextInput
-          style={styles.form_input}
-          onChangeText={(username) => this.setState({username})}
-          value={this.state.username}
-        />
-        <Text>
-          Password
-        </Text>
+            placeholder='Username'
+            autoCapitalize='none'
+            autoCorrect={false}
+            autoFocus={true}
+            keyboardType='email-address'
+            value={this.state.username}
+            onChangeText={(username) => this.setState({username})} />
         <TextInput
-          style={styles.form_input}
-          onChangeText={(password) => this.setState({password})}
-          value={this.state.password}
-          secureTextEntry={true}
-        />
+            placeholder='Password'
+            autoCapitalize='none'
+            autoCorrect={false}
+            secureTextEntry={true}
+            value={this.state.password}
+            onChangeText={(password) => this.setState({password})} />
+        <View style={{margin: 7}}/>
         <Button
           title="Login!"
           onPress={this.buttonClicked}
-          accessibilityLabel="Learn more about this purple button">
-          Press Me!
-        </Button>
-      </View>
+          accessibilityLabel="Learn more about this purple button"/>
+    </ScrollView>
     );
   }
 }

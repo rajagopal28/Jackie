@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView,
   Button,
   TextInput,
   ToastAndroid
@@ -53,31 +54,29 @@ class DoctorLoginScreen extends Component {
   }
   render() {
     return (
-      <View style={styles.form_container}>
-        <Text>
-          Doctorname
-        </Text>
+      <ScrollView style={styles.formPadding}>
+        <Text style={styles.formHeading}>Credentials</Text>
         <TextInput
-          style={styles.form_input}
-          onChangeText={(username) => this.setState({username})}
-          value={this.state.username}
-        />
-        <Text>
-          Password
-        </Text>
+            placeholder='Username'
+            autoCapitalize='none'
+            autoCorrect={false}
+            autoFocus={true}
+            keyboardType='email-address'
+            value={this.state.username}
+            onChangeText={(username) => this.setState({username})} />
         <TextInput
-          style={styles.form_input}
-          onChangeText={(password) => this.setState({password})}
-          value={this.state.password}
-          secureTextEntry={true}
-        />
+            placeholder='Password'
+            autoCapitalize='none'
+            autoCorrect={false}
+            secureTextEntry={true}
+            value={this.state.password}
+            onChangeText={(password) => this.setState({password})} />
+        <View style={{margin: 7}}/>
         <Button
           title="Login!"
           onPress={this.buttonClicked}
-          accessibilityLabel="Learn more about this purple button">
-          Press Me!
-        </Button>
-      </View>
+          accessibilityLabel="Learn more about this purple button"/>
+    </ScrollView>
     );
   }
 }

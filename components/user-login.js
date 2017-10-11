@@ -5,6 +5,7 @@ import {
   Platform,
   StyleSheet,
   Text,
+  View,
   ScrollView,
   Button,
   TextInput,

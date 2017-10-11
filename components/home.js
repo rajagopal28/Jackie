@@ -4,8 +4,12 @@ import {
   Platform,
   Text,
   View,
-  Button
+  Button,
+  ToastAndroid
 } from 'react-native';
+
+// var PushNotification = require('react-native-push-notification');
+import PushNotification from 'react-native-push-notification';
 
 import HomeStyles from '../styles/app-styles';
 
@@ -37,7 +41,36 @@ class HomeScreen extends Component {
       }
      }
    }
+   async saveGCMID(token) {
+     console.log( 'TOKEN:', token );
+     if(token && token.token) {
+       AsyncStorage.setItem('DeviceGCMID', token.token);
+     }
+     ToastAndroid.show('onRegister, Loaded DeviceGCMID', ToastAndroid.SHORT);
+   }
+   loadGCMId() {
+     let _this = this;
+     PushNotification.configure({
+         // (optional) Called when Token is generated (iOS and Android)
+         onRegister: function(token) {
+           _this.saveGCMID(token);
+         },
+         // (required) Called when a remote or local notification is opened or received
+         onNotification: function(notification) {
+             console.log( 'NOTIFICATION:', notification );
+             if(notification['gcm.notification.title']) {
+               PushNotification.localNotification({
+                 "title" : notification['gcm.notification.body'],
+                 "message" : notification['gcm.notification.title']
+               });
+             }
+         },
+         // ANDROID ONLY: GCM Sender ID (optional - not required for local notifications, but is need to receive remote push notifications)
+         senderID: "426278808874"
+     });
+   }
    componentDidMount() {
+     this.loadGCMId();
      this.loadFromSettings();
    }
    render() {

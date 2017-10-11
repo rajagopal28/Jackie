@@ -12,8 +12,7 @@ import HomeStyles from '../styles/app-styles';
 const styles = HomeStyles;
 
 const os = Platform.select({
-  ios: '' +
-    'Apple',
+  ios: 'Apple',
   android: 'Android',
 });
 class HomeScreen extends Component {
@@ -48,7 +47,7 @@ class HomeScreen extends Component {
      return (
        <View style={styles.container}>
          <Text style={styles.welcome}>
-           Meet Jakie!
+           Meet Jakie! Your Personal Health Assistant!
          </Text>
          <Text style={styles.instructions}>
               Please Login to Access features from your {os} device!

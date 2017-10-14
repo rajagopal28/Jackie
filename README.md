@@ -26,9 +26,49 @@ As part of this we build this Mobile application
 - That keeps track of your vitals
 - That notifies doctors when vital levels are abnormal
 
-
+### Home:
+![Home](https://file.ac/h-50abi7Tj0/image300.png)
+### User Login:
+![User Login](https://file.ac/h-50abi7Tj0/image301.png)
+### User Home:
+![User Home](https://file.ac/h-50abi7Tj0/image302.png)
+### Doctor Appointments:
+![Doctor Appointments](https://file.ac/h-50abi7Tj0/image303.png)
+### Out Patients:
+![Out Patients](https://file.ac/h-50abi7Tj0/image304.png)
+### Vitals Input:
+![Vitals Input](https://file.ac/h-50abi7Tj0/image305.png)
+### Vitals Logs:
+![Vitals Logs](https://file.ac/h-50abi7Tj0/image306.png)
+### Medicines To Take:
+![Medicines To Take](https://file.ac/h-50abi7Tj0/image307.png)
+### Log medicine intake:
+![Log medicine intake](https://file.ac/h-50abi7Tj0/image308.png)
+### User Logout:
+![User Logout](https://file.ac/h-50abi7Tj0/image309.png)
+![User Logout](https://file.ac/h-50abi7Tj0/image310.png)
+### Doctor Login:
+![Doctor Login](https://file.ac/h-50abi7Tj0/image311.png)
+### Doctor Home:
+![Doctor Home](https://file.ac/h-50abi7Tj0/image312.png)
+### Doctor Notifications:
+![Doctor Notifications](https://file.ac/h-50abi7Tj0/image313.png)
+### Out Patients:
+![Out Patients](https://file.ac/h-50abi7Tj0/image314.png)
+### Doctor Notifications:
+![Doctor Notifications](https://file.ac/h-50abi7Tj0/image315.png)
+![Doctor Notifications](https://file.ac/h-50abi7Tj0/image316.png)
+![Doctor Notifications](https://file.ac/h-50abi7Tj0/image317.png)
 ## Technical Nuances
-- The mobile application we built in React Native also took a considerable amount of effort as it significantly tried to mimic real-world interactions by being close to the users in all their activities.
+## Mobile:
+* **React Native** was chosen because of its capabilities to develop hybrid apps that support both android and iOS with the same code base.
+* It also helped us big time in bringing some of the native capabilities that are more specific to the android and iOS platforms. We had several developer friendly benefits that come with react-native.
+* The setup was so easy to reload the code changes without even building the app continuously. It also provides platform specific styling and content that can be co-exist but will be chosen in the run time.
+* React native uses flex styles that help us easily align the components without bothering about the complicated layouts and grids that usually slow down the development with requirement of UI development skills.
+* **GCM mobile:** We required push notification support which was obtained in a quick whiff by the inclusion of react-native-push-notification plug-in.  
+## IoT and Wearables:
+* **Wearable:** We have just started with the wearable development. So far we have found that it completely requires native code and it works in both pull and push modes in which the data is transmitted to the mobile app or the google server as such which holds the user fitness data as part of it google fit applications.
+* ** Connected Devices:** Regarding IoT, we intend to first integrate with glucose meter as this application was primarily intended for diabetic patients. We have not actively started development but we have a deep research and identified the requirements to chose the type of device required and also about the aurdino boards and development setup that we need to integrate the required capabilities into the system. So far we also intend to integrate the device through aurdino to the actual mobile device via bluetooth modules.
 
 
 ## Key Learnings

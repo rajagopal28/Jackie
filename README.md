@@ -68,7 +68,7 @@ As part of this we build this Mobile application
 * **GCM mobile:** We required push notification support which was obtained in a quick whiff by the inclusion of react-native-push-notification plug-in.  
 ## IoT and Wearables:
 * **Wearable:** We have just started with the wearable development. So far we have found that it completely requires native code and it works in both pull and push modes in which the data is transmitted to the mobile app or the google server as such which holds the user fitness data as part of it google fit applications.
-* ** Connected Devices:** Regarding IoT, we intend to first integrate with glucose meter as this application was primarily intended for diabetic patients. We have not actively started development but we have a deep research and identified the requirements to chose the type of device required and also about the aurdino boards and development setup that we need to integrate the required capabilities into the system. So far we also intend to integrate the device through aurdino to the actual mobile device via bluetooth modules.
+* **Connected Devices:** Regarding IoT, we intend to first integrate with glucose meter as this application was primarily intended for diabetic patients. We have not actively started development but we have a deep research and identified the requirements to chose the type of device required and also about the aurdino boards and development setup that we need to integrate the required capabilities into the system. So far we also intend to integrate the device through aurdino to the actual mobile device via bluetooth modules.
 
 
 ## Key Learnings

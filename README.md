@@ -3,7 +3,7 @@ A react native based app for health care assistance [Proposal](https://github.co
 
 The related web repository can be viewed ==> [Web](https://github.com/rajagopal28/healthcare-server)
 
-Download the Mobile App [Here](https://file.ac/h-50abi7Tj0/com.jackie.ai.apk)
+Download the Mobile App [Here](./com.jackie.ai.apk)
 ## Problem at hand
 Our major objective is to create an environment that helps us be independent and be healthy. Being independent makes us feel empowered all the time. People tend to forget things more often. But when it comes to health we got to be vigilant. Diabetic people need constant attention and care when it comes to health checks and medications. Level-2 Diabetes often required periodic insulin intake to keep glucose level balanced. They should also maintain a timely and proper diet that goes hand in hand with their medication schedules. We live in a busy world where we cannot be around all the time. With that being said we can deep dive into our proposed solution.
 
@@ -12,7 +12,7 @@ The proposed solution is to have a multi-platform environment that helps you tak
 
 
 ## Proposed architecture
-![Mobile Block](https://file.ac/h-50abi7Tj0/image01.png)
+![Mobile Block](./images/image01.png)
 This entire application has 3 essential components
 - The centralized healthcare server which holds patient data such as vital information, medicine intake logs, appointments, prescriptions etc.
 - The mobile app + wearable component - with this combo we can collect user information such as vitals, medicine intake activities, reminders on appointments and medicine intakes etc.
@@ -27,38 +27,38 @@ As part of this we build this Mobile application
 - That notifies doctors when vital levels are abnormal
 
 ### Home:
-![Home](https://file.ac/h-50abi7Tj0/image300.png)
+![Home](./images/image300.png)
 ### User Login:
-![User Login](https://file.ac/h-50abi7Tj0/image301.png)
+![User Login](./images/image301.png)
 ### User Home:
-![User Home](https://file.ac/h-50abi7Tj0/image302.png)
+![User Home](./images/image302.png)
 ### Doctor Appointments:
-![Doctor Appointments](https://file.ac/h-50abi7Tj0/image303.png)
+![Doctor Appointments](./images/image303.png)
 ### Out Patients:
-![Out Patients](https://file.ac/h-50abi7Tj0/image304.png)
+![Out Patients](./images/image304.png)
 ### Vitals Input:
-![Vitals Input](https://file.ac/h-50abi7Tj0/image305.png)
+![Vitals Input](./images/image305.png)
 ### Vitals Logs:
-![Vitals Logs](https://file.ac/h-50abi7Tj0/image306.png)
+![Vitals Logs](./images/image306.png)
 ### Medicines To Take:
-![Medicines To Take](https://file.ac/h-50abi7Tj0/image307.png)
+![Medicines To Take](./images/image307.png)
 ### Log medicine intake:
-![Log medicine intake](https://file.ac/h-50abi7Tj0/image308.png)
+![Log medicine intake](./images/image308.png)
 ### User Logout:
-![User Logout](https://file.ac/h-50abi7Tj0/image309.png)
-![User Logout](https://file.ac/h-50abi7Tj0/image310.png)
+![User Logout](./images/image309.png)
+![User Logout](./images/image310.png)
 ### Doctor Login:
-![Doctor Login](https://file.ac/h-50abi7Tj0/image311.png)
+![Doctor Login](./images/image311.png)
 ### Doctor Home:
-![Doctor Home](https://file.ac/h-50abi7Tj0/image312.png)
+![Doctor Home](./images/image312.png)
 ### Doctor Notifications:
-![Doctor Notifications](https://file.ac/h-50abi7Tj0/image313.png)
+![Doctor Notifications](./images/image313.png)
 ### Out Patients:
-![Out Patients](https://file.ac/h-50abi7Tj0/image314.png)
+![Out Patients](./images/image314.png)
 ### Doctor Notifications:
-![Doctor Notifications](https://file.ac/h-50abi7Tj0/image315.png)
-![Doctor Notifications](https://file.ac/h-50abi7Tj0/image316.png)
-![Doctor Notifications](https://file.ac/h-50abi7Tj0/image317.png)
+![Doctor Notifications](./images/image315.png)
+![Doctor Notifications](./images/image316.png)
+![Doctor Notifications](./images/image317.png)
 ## Technical Nuances
 ## Mobile:
 * **React Native** was chosen because of its capabilities to develop hybrid apps that support both android and iOS with the same code base.
